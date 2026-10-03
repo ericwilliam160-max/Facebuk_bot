@@ -77,10 +77,28 @@
       <button onclick="alert('Your Web App is working!')">
         Open App
       </button>
-      <a href="https://www.facebook.com/"
-   style="display:block; width:100%; box-sizing:border-box; padding:15px; border:0; border-radius:10px; text-align:center; text-decoration:none; cursor:pointer;">
-   Open Facebook
-      </a>
+<button onclick="openFacebook()"
+style="display:block; width:100%; box-sizing:border-box;">
+Open Facebook
+</button>
+
+<script>
+function openFacebook() {
+    var ua = navigator.userAgent || navigator.vendor || window.opera;
+
+    if (/android/i.test(ua)) {
+        window.location.href =
+        "intent://www.facebook.com/#Intent;scheme=https;package=com.facebook.katana;end";
+    }
+    else if (/iPhone|iPad|iPod/i.test(ua)) {
+        window.location.href =
+        "fb://facewebmodal/f?href=https://www.facebook.com/";
+    }
+    else {
+        window.location.href = "https://www.facebook.com/";
+    }
+}
+</script>
 </div>
   </main>
 
