@@ -82,6 +82,18 @@ style="display:block; width:100%; box-sizing:border-box;">
 Open Facebook
 </button>
 
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+<script>
+function openFacebook() {
+    if (window.Telegram && Telegram.WebApp) {
+        Telegram.WebApp.openLink("https://www.facebook.com/");
+    } else {
+        window.open("https://www.facebook.com/", "_blank");
+    }
+}
+</script>
+
 <script>
 function openFacebook() {
     var ua = navigator.userAgent || navigator.vendor || window.opera;
