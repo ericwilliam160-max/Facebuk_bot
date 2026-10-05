@@ -86,27 +86,12 @@ Open Facebook
 
 <script>
 function openFacebook() {
-    if (window.Telegram && Telegram.WebApp) {
-        Telegram.WebApp.openLink("https://google.com");
-    } else {
-        window.open("https://www.facebook.com/", "_blank");
-    }
-}
-</script>
-
-<script>
-function openFacebook() {
     var ua = navigator.userAgent || navigator.vendor || window.opera;
 
     if (/android/i.test(ua)) {
         window.location.href =
         "intent://www.facebook.com/#Intent;scheme=https;package=com.facebook.katana;end";
-    }
-    else if (/iPhone|iPad|iPod/i.test(ua)) {
-        window.location.href =
-        "fb://facewebmodal/f?href=https://www.facebook.com/";
-    }
-    else {
+    } else {
         window.location.href = "https://www.facebook.com/";
     }
 }
